@@ -4,6 +4,7 @@
   <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Bootstrap demo</title>
+      <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -28,17 +29,6 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
-<script type="text/javascript">
-  const provider = await detectEthereumProvider()
-
-  if (provider) {
-    console.log(ETHEREUM FOUND)
-  } else {
-    console.log(ETHEREUM NOT FOUND)
-  }
-</script>
-
 <script>
   let account;
   document.getElementById('connect-wallet').addEventListener('click', event => {
@@ -47,6 +37,14 @@
         console.log(account);
     });
   });
+
+  let provider;
+  provider = detectEthereumProvider();
+  if (provider) {
+    console.log(ETHEREUM FOUND)
+  } else {
+    console.log(ETHEREUM NOT FOUND)
+  }
 
   document.getElementById('stake-eth').addEventListener('click', event => {
 
