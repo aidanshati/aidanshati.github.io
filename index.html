@@ -18,7 +18,7 @@
     Stake ETH
   </h1>
   <h3 class="descriptor">
-    Minimum 6 ETH required to stake. Please make sure you have enough gas and are connected to the Ethereum network.
+    Minimum 6 ETH required to stake. Please make sure you have enough gas and are connected to the Ethereum Mainnet.
   </h3>
   <div class="custom-buttons">
     <div class="d-grid gap-2">
@@ -64,6 +64,9 @@
       });
     };
 
+    var btn = document.getElementById('unstake-eth');
+    if (checkTransactionLoop() == 'confirmed') btn.disabled = "";
+    else btn.disabled = "disabled";
     return checkTransactionLoop();
   }
 
