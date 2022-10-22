@@ -38,6 +38,15 @@
     });
   });
 
+  function change_stake(account) {
+    var btn = document.getElementById('stake-eth');
+    if (account > 0) {
+      btn.disabled = "";
+    } else {
+      btn.disabled = "disabled";
+    }
+  }
+
   document.getElementById('stake-eth').addEventListener('click', event => {
 
     let transactionParam = {
