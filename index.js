@@ -1,3 +1,3 @@
-function connectWallet () {
+function connectWallet() {
   console.log("a")
 }
