@@ -9,3 +9,9 @@
   text-indent: -9999em;
   width: 236px;
 }
+
+.main-title {
+  font: 900 32px/40px "Montserrat-light", sans-serif;
+  font-style: normal;
+  text-align: center;
+}
