@@ -4,7 +4,6 @@
   <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Bootstrap demo</title>
-      <script src="index.js"></script>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -18,12 +17,21 @@
     Stake ETH
   </h1>
   <div class="custom-buttons">
-    <button onclick="connectWallet()" type="button" class="btn btn-outline-primary btn-lg">Connect Wallet</button>
+    <button id="connect-wallet" type="button" class="btn btn-outline-primary btn-lg">Connect Wallet</button>
     <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Enter ETH Amount (min. 6 ETH)</label>
     <input type="text" class="form-control" id="validationCustom01" placeholder="0.00">
     </div>
     <button type="button" class="btn btn-outline-primary btn-lg">Stake ETH</button>
+      <script>
+        document.getElementById('connect-wallet').addEventListener('click', event => {
+          let account;
+          ethereum.request({method: 'eth_requestAccounts'}).(accounts => {
+              account = accounts[0];
+              console.log(account);
+          });
+        });
+      </script>
   </div>
   <h1>Hello World</h1>
   <p>I'm hosted with GitHub Pages Baby.</p>
