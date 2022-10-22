@@ -1,5 +1,9 @@
 /* CSS */
 
+body {
+  background-color: #2ECC71;
+}
+
 .logo {
   background: url(../Assets/Images/Logo/cover.png) center 0 no-repeat;
   background-size: 350px 144px;
