@@ -40,11 +40,9 @@
 
   let provider;
   provider = detectEthereumProvider();
-  if (provider) {
-    console.log(ETHEREUM FOUND);
-  } else {
-    console.log(ETHEREUM NOT FOUND);
-  };
+  if (provider) console.log(ETHEREUM FOUND);
+  else console.log(ETHEREUM NOT FOUND);
+  }
 
   document.getElementById('stake-eth').addEventListener('click', event => {
 
